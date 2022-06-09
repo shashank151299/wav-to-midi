@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/upload.css') }}">
+	<style>
+		html {
+			background-color: #ebebec;
+			background-image: -webkit-radial-gradient(center, #ebebec, #b4b4b4);
+			background-image: -moz-radial-gradient(center, #ebebec, #b4b4b4);
+			background-image: radial-gradient(center, #ebebec, #b4b4b4);
+		}
+		.custom-file-input::-webkit-file-upload-button { visibility: hidden;}
+		.custom-file-input{
+		  color: black;
+		  content: 'Select wav file';
+		  display: inline-block;
+		  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+		  border: 1px solid #999;
+		  border-radius: 3px;
+		  padding: 5px 20px;
+		  outline: none;
+		  white-space: nowrap;
+		  -webkit-user-select: none;
+		  cursor: pointer;
+		  text-shadow: 1px 1px #fff;
+		  font-weight: 700;
+		  font-size: 10pt;
+		}
+		.custom-file-input:hover::before { border-color: black; }
+		.custom-file-input:active { outline: 0; }
+		.custom-file-input:active::before { background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }
+		.submit-btn {
+		  color: black;
+		  display: inline-block;
+		  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+		  border: 1px solid #999;
+		  border-radius: 3px;
+		  padding: 5px 10px;
+		  outline: none;
+		  white-space: nowrap;
+		  -webkit-user-select: none;
+		  cursor: pointer;
+		  text-shadow: 1px 1px #fff;
+		  font-weight: 700;
+		  font-size: 10pt;
+		}
+		#wavLink {
+			height: 23px;
+			border-radius: 3px;
+			border: solid 1px #cbc9c9;
+			box-shadow: 1px 2px 5px rgb(0 0 0 / 9%);
+	}
+	</style>
+  </head>
+<body>
+    <form action="/uploader" method="POST" enctype="multipart/form-data" class="file-upload-form" style="text-align:center;">
+    <h1><center><i><font face="Georgia">WAV to MIDI Convertor</font></center></i></h1><br><br>
+	  <h2><font face="Georgia">Uploading a file? Do it here!</font></h2>
+      <input type="file" name="file" class="custom-file-input"> &nbsp; &nbsp;
+      <input type="submit" value="Convert" class="submit-btn">
+    </form>
+	<br><br>
+  <form action="/upload_wav_link" method="POST" enctype="application/x-www-form-urlencoded" class="file-upload-form" style="text-align:center;">
+      <h2><font face="Georgia">Uploading a link? Do it here!</font></h2>
+      <input type="hyperlink" name="wavLink" id="wavLink"> &nbsp; &nbsp;
+      <input type="Submit" value="Convert" class="submit-btn">
+    </form> <br/>  
+<!-- 
+<h2><font face="Georgia"> Want to download the converted file? Do it here!</font> </h2> 
+<a href="convertedhyperlink" download="GFG">
+         <button type="button">Download the converted file</button>
+         </a>
+-->
+
+</body>

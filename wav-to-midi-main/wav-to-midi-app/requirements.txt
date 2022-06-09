@@ -1,0 +1,5 @@
+flask==2.0.2
+numpy
+librosa
+midiutil
+uuid
